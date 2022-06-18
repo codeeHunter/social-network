@@ -1,0 +1,9 @@
+.sidebar h4 {
+    text-align: center;
+}
+
+.blockFriends {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

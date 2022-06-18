@@ -1,0 +1,28 @@
+.post {
+    display: flex;
+}
+
+.logo img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.posts {
+    padding-left: 20px;
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    padding-top: 10px;            
+}
+
+.name {
+    color: #E1E3E6;
+}
+
+.item {
+    align-items: center;
+    align-content: center;
+    color: #E1E3E6;
+    height: 50px;
+}       

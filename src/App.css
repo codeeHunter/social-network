@@ -1,0 +1,69 @@
+.app-wrapper {
+    background-color: #141414;
+    height: 100vh;
+}
+
+.mainContent {
+    padding-top: 20px;
+    background: #141414;
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "n c";
+    grid-template-columns: 2fr 10fr;
+}
+
+.header {
+    width: 100%;
+    background-color: #222222;
+}
+
+
+.navbar {
+    grid-area: n;
+}
+
+.mainBlock {
+    grid-area: c;
+}
+
+.app-wrapper-content {
+    padding-top: 10px;
+    border: 1px solid #343639;
+    border-radius: 4px;
+    background-color: #141414;
+}
+
+h1, a, span, h2, p {
+    color: #E1E3E6;
+}
+
+input {
+    color: #222222;
+}
+
+.textArea {
+    border: 2px #333333 solid;
+    border-radius: 4px;
+    background: #222222;
+    margin-bottom: 10px;
+    resize: none;
+    padding-bottom: 10px;
+    color: #e1e3e6;
+}
+
+.textArea:focus {
+    outline: none;
+}
+
+.btn {
+    background: #656565;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #E1E3E6;
+    border: 0px;
+}
+
+.btn:hover {
+    background: #555555;
+}

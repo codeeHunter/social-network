@@ -1,0 +1,37 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas: "b a a" "b a a" "b c c";
+    background: #222222;
+    border: 1px #333333 solid;
+    width: 40vw;
+    border-radius: 4px;
+    height: 47.5vh;
+}
+
+.dialogsItems {
+    padding: 10px;
+    grid-area: b;
+}
+
+.dialogsItems a {
+    color: #E1E3E6;
+    text-decoration: none;
+}
+
+.messages {
+    padding: 10px;
+    grid-area: a;
+    color: #E1E3E6;
+}
+
+.addMessage {
+    grid-area: c;
+}
+
+.message {
+    padding-bottom: 10px;
+}
+
+
+

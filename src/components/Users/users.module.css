@@ -1,0 +1,81 @@
+.active {
+    font-weight: bold;
+}
+
+.isActive { 
+    font-weight: bold;
+}
+
+.users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.userBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    color: white;
+}
+.status {
+    display: flex;
+}
+
+.users img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.mainContent {
+    height: 100vh;
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background: #222222;
+    border: 1px #333333 solid;
+    width: 37vw;
+    height: 4vh;
+    margin-bottom: 10px;
+}
+
+.numberFooter {
+    margin-top: 10px;
+}
+
+.users {
+    background: #222222;
+    border: 1px #333333 solid;
+    width: 37vw;
+}
+
+.number span {
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin-right: 5px;
+    width: 30px;
+    background: #656565;
+}
+
+.number span:hover {
+    cursor: pointer;
+}

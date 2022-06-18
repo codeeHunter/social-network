@@ -1,0 +1,9 @@
+.preloader {
+    background: black;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}

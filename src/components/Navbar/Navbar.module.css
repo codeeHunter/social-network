@@ -1,0 +1,38 @@
+.nav {
+    background-color: #141414;
+    border-radius: 4px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    margin-bottom: 5px;
+}
+
+.item a {
+    width: 130px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    height: 30px;
+    color: #E1E3E6;
+    text-decoration: none;
+}
+
+.item a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+}
+
+.item a.active {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.sidebar {
+    color: #E1E3E6;
+    margin-top: 30px;
+}

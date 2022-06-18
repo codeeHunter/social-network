@@ -1,0 +1,27 @@
+.posts {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.myPost {
+    margin-top: 20px;
+    padding: 27px 27px;
+    background: #222222;
+    border: 1px #333333 solid;
+    width: 37vw;
+    border-radius: 4px;
+}
+
+.myPost textarea {
+
+}
+
+.myPost textarea:focus {
+    outline: none;
+}
+
+
+.btnPost {
+    padding-bottom: 20px;
+}

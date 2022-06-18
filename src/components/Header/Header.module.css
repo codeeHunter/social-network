@@ -1,0 +1,22 @@
+.headerContent {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerContent img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+.loginBlock {
+    float: right;
+}
+
+.loginBlock a {
+    text-decoration: none;
+    color: white;
+}

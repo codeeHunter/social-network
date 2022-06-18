@@ -1,0 +1,26 @@
+.blockFriends a {
+    color: #E1E3E6;
+    text-decoration: none;
+}
+
+.blockFriends a.isHovered {
+    background-color: black;
+    border: 2px solid black;
+}
+
+.blockFriend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blockFriend h5 {
+    margin-top: 0;
+}
+
+
+.blockFriend img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}

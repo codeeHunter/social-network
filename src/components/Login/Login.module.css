@@ -1,0 +1,15 @@
+.login {
+    background: #222222;
+    border: 1px #333333 solid;
+    width: 40vw;
+    border-radius: 4px;
+    padding-left: 30px;
+}
+.loginButton {
+    margin-bottom: 30px;
+}
+
+.password {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

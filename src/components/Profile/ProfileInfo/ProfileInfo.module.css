@@ -1,0 +1,55 @@
+.background img{
+    width: 100%;
+    height: 55vh;
+}
+
+.descriptionBlock {
+    margin-top: -10px;
+    padding-top: 20px;
+    background: #222222;
+    border: 1px #333333 solid;
+    width: 40vw;
+    border-radius: 4px;
+}
+
+.descriptionBlock img {
+    height: 20vh;
+    width: 13vw;
+    border-radius: 50%;
+}
+
+.descriptionBlock {
+    display: flex;
+}
+
+.profileLogo {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.uploadFile {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    padding: 4px 20px 4px 20px;
+    color: #E1E3E6;
+    border-radius: 3px;
+    background: #656565;
+}
+
+.uploadFile:hover {
+    cursor: pointer;
+    background: #737373;
+}
+
+
+.status {
+    display: inline;
+}
+
+.statusSpan {
+    outline: none;
+}
