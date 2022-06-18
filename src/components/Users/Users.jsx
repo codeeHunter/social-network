@@ -19,9 +19,7 @@ const Users = (props) => {
     for (let i = 0; i < 3; i++) {
         if(props.users[i] != undefined) {
             usersCount[i] = props.users[i]
-            console.log(usersCount[i]);
         }
-
     }
 
     return (

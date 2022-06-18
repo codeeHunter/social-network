@@ -20,13 +20,21 @@ const FileUploader = ({savePhoto}) => {
     );
 }
 
+const ProfilePhoto = ({profile, isOwner}) => {
+    return(
+        <div>
+            <img src={profile.profile !== null && profile.profile.photos.large !== null ?  profile.profile.photos.large : users } alt=""/>
+            {isOwner && <FileUploader />}
+        </div>
+    )
+}
+
 const ProfileInfo = ({status, updateStatus, profile, isOwner}) => {
     return (
         <div className="">
             <div className={s.descriptionBlock}>
                 <div className={s.profileLogo}>
-                    <img src={profile.profile ? profile.profile.photos.large : users} alt=""/>
-                    {isOwner && <FileUploader />}
+                    <ProfilePhoto profile={profile} isOwner={isOwner} />
                 </div>
                 <div className="">
                     <ProfileStatusWithHook status={status} updateStatus={updateStatus}/>

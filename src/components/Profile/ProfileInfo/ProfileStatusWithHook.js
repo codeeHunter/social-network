@@ -2,8 +2,9 @@ import s from './ProfileInfo.module.css'
 import React, {useEffect, useState} from 'react'
 
 const ProfileStatusWithHook = (props) => {
-    const [editMode, setEditMode] =  useState(false)
-    const [status, setStatus] =  useState(props.status)
+    console.log(props)
+    const [editMode, setEditMode] = useState(false)
+    const [status, setStatus] = useState(props.status)
 
     const activateEditMode = () => {
         setEditMode(true)
@@ -11,7 +12,7 @@ const ProfileStatusWithHook = (props) => {
 
     useEffect(() => {
         setStatus(props.status)
-    },[props.status])
+    }, [props.status])
 
     const deactivateEditMode = () => {
         setEditMode(false)
@@ -27,12 +28,12 @@ const ProfileStatusWithHook = (props) => {
             <p>Статус: </p>
             {!editMode &&
                 <div className={s.statusInput}>
-                    <p onDoubleClick={activateEditMode}>{props.status}</p>
+                    {props.status !== null ?  <p onDoubleClick={activateEditMode}>{props.status}</p>: <p>Пустой статус</p> }
                 </div>
             }
             {editMode &&
                 <div className={s.statusSpan}>
-                    <input value={status}  onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode}/>
+                    <input value={status} onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode}/>
                 </div>
             }
         </div>

@@ -34,7 +34,8 @@
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
-    padding: 4px 20px 4px 20px;
+    justify-content: center;
+    padding: 5px;
     color: #E1E3E6;
     border-radius: 3px;
     background: #656565;
