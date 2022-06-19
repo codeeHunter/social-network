@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import s from "./Navbar.module.css";
 import SidebarContainer from "./sidebar/SidebarContainer";
 
-const Navbar = (props) => (
+const Navbar = () => (
     <nav className={s.nav}>
         <div className={s.item}>
             <NavLink to="/profile" className={(navbar) => (navbar.isActive ? s.active : "")}>

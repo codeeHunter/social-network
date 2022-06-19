@@ -18,7 +18,7 @@ const appReducer = (state = initialState, action) => {
     }
 };
 
-export const initializedSuccess = (userId, email, login, isAuth) => ({
+export const initializedSuccess = () => ({
     type: INITIALIZED_SUCCESS,
 });
 

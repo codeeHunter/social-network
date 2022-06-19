@@ -1,8 +1,5 @@
-.active {
-    font-weight: bold;
-}
-
-.isActive { 
+/* stylelint-disable order/properties-order */
+.active .isActive {
     font-weight: bold;
 }
 
@@ -11,7 +8,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 80%;
+    background: #222222;
+    border: 1px #333333 solid;
+    width: 37vw;
 }
 
 .userInfo {
@@ -30,6 +29,7 @@
 .name {
     color: white;
 }
+/* stylelint-disable-next-line rule-empty-line-before */
 .status {
     display: flex;
 }
@@ -58,12 +58,6 @@
 
 .numberFooter {
     margin-top: 10px;
-}
-
-.users {
-    background: #222222;
-    border: 1px #333333 solid;
-    width: 37vw;
 }
 
 .number span {

@@ -7,38 +7,25 @@ const instance = axios.create({
 });
 
 export const usersAPI = {
-    getUsers(currentPage, pageSize) {
-        return instance
-            .get(`users?page=${currentPage}&count=${pageSize}`, {
-                withCredentials: true,
-            })
-            .then((response) => response.data);
+    getUsers: async (currentPage, pageSize) => {
+        const response = await instance.get(`users?page=${currentPage}&count=${pageSize}`, {
+            withCredentials: true,
+        });
+        return response.data;
     },
-    follow(userId) {
-        return instance.post(`follow/${userId}`);
-    },
-    unfollow(userId) {
-        return instance.delete(`follow/${userId}`);
-    },
-    getProfile(userId) {
-        return profileAPI.getProfile(userId);
-    },
+    follow: (userId) => instance.post(`follow/${userId}`),
+    unfollow: (userId) => instance.delete(`follow/${userId}`),
+    getProfile: (userId) => profileAPI.getProfile(userId),
 };
 
 export const profileAPI = {
-    getProfile(userId) {
-        return instance.get(`profile/${userId}`);
-    },
-    getStatus(userId) {
-        return instance.get(`profile/status/${userId}`);
-    },
-    updateStatus(status) {
-        return instance.put(`profile/status`, { status });
-    },
-    savePhoto(photoFile) {
+    getProfile: (userId) => instance.get(`profile/${userId}`),
+    getStatus: (userId) => instance.get(`profile/status/${userId}`),
+    updateStatus: (status) => instance.put(`profile/status`, { status }),
+    savePhoto: async (photoFile) => {
         const formData = new FormData();
         formData.append("image", photoFile);
-        return instance.put(`profile/photo`, formData, {
+        return await instance.put(`profile/photo`, formData, {
             headers: {
                 "Content-type": "multipart/form-data",
             },
@@ -47,19 +34,12 @@ export const profileAPI = {
 };
 
 export const authAPI = {
-    auth() {
-        return instance.get(`auth/me`);
-    },
-    login(email, password, rememberMe = false, captcha = null) {
-        return instance.post(`auth/login`, { email, password, rememberMe, captcha });
-    },
-    logout() {
-        return instance.delete(`auth/login`);
-    },
+    auth: () => instance.get(`auth/me`),
+    login: (email, password, rememberMe = false, captcha = null) =>
+        instance.post(`auth/login`, { email, password, rememberMe, captcha }),
+    logout: () => instance.delete(`auth/login`),
 };
 
 export const securityAPI = {
-    getCaptchaUrl() {
-        return instance.get(`security/get-captcha-url`);
-    },
+    getCaptchaUrl: () => instance.get(`security/get-captcha-url`),
 };

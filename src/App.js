@@ -44,6 +44,9 @@ class App extends React.Component {
                                 <Route path="news" element={<News />} />
                                 <Route path="login" element={<Login />} />
                             </Routes>
+                            <div className="forSmallDevice">
+                                <p>This device not working.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

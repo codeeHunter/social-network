@@ -17,7 +17,7 @@ const Users = (props) => {
     const usersCount = [];
 
     for (let i = 0; i < 3; i++) {
-        if (props.users[i] != undefined) {
+        if (props.users[i] !== undefined) {
             usersCount[i] = props.users[i];
         }
     }

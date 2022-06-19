@@ -1,6 +1,5 @@
 import React from "react";
-import { reduxForm } from "redux-form";
-import { Field } from "redux-form";
+import { reduxForm, Field } from "redux-form";
 import s from "./Texts.module.css";
 
 const Texts = (props) => (

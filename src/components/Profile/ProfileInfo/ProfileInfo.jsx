@@ -19,14 +19,14 @@ const FileUploader = ({ savePhoto }) => {
                 style={{ display: "none" }}
                 onChange={onMainPhotoSelected}
             />
-            <label htmlFor={"id"} className={s.uploadFile}>
+            <label htmlFor={"id"} className={Style.uploadFile}>
                 Загрузить фото
             </label>
         </>
     );
 };
 
-const ProfilePhoto = ({ profile, isOwner }) => (
+const ProfilePhoto = ({ profile, isOwner, savePhoto }) => (
     <>
         <img
             src={
@@ -36,15 +36,15 @@ const ProfilePhoto = ({ profile, isOwner }) => (
             }
             alt=""
         />
-        {isOwner && <FileUploader />}
+        {isOwner && <FileUploader savePhoto={savePhoto} />}
     </>
 );
 
-const ProfileInfo = ({ status, updateStatus, profile, isOwner }) => (
+const ProfileInfo = ({ status, updateStatus, profile, isOwner, savePhoto }) => (
     <div className="">
         <div className={Style.descriptionBlock}>
-            <div className={s.profileLogo}>
-                <ProfilePhoto profile={profile} isOwner={isOwner} />
+            <div className={Style.profileLogo}>
+                <ProfilePhoto profile={profile} isOwner={isOwner} savePhoto={savePhoto} />
             </div>
             <div className="">
                 <ProfileStatusWithHook status={status} updateStatus={updateStatus} />
