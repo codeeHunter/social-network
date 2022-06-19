@@ -1,10 +1,9 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import s from "./Friends.module.css"
+import React from "react";
+import { NavLink } from "react-router-dom";
+import s from "./Friends.module.css";
 
 const Friends = (props) => {
-
-    let path = "/user/" + props.id
+    const path = "/user/" + props.id;
 
     return (
         <div className={s.blockFriends}>
@@ -20,6 +19,6 @@ const Friends = (props) => {
             </NavLink>
         </div>
     );
-}
+};
 
 export default Friends;

@@ -1,10 +1,10 @@
-import {getAuthUserData} from "./auth-reducers";
+import { getAuthUserData } from "./auth-reducers";
 
-const INITIALIZED_SUCCESS = "INITIALIZED_SUCCESS"
+const INITIALIZED_SUCCESS = "INITIALIZED_SUCCESS";
 
 const initialState = {
     initialized: false,
-}
+};
 
 const appReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -12,26 +12,21 @@ const appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 initialized: true,
-            }
+            };
         default:
-            return state
+            return state;
     }
-}
+};
 
-
-export const initializedSuccess = (userId, email, login, isAuth) => {
-    return {
-        type: INITIALIZED_SUCCESS,
-    }
-}
+export const initializedSuccess = (userId, email, login, isAuth) => ({
+    type: INITIALIZED_SUCCESS,
+});
 
 export const initializeApp = () => (dispatch) => {
-    let promise = dispatch(getAuthUserData())
+    const promise = dispatch(getAuthUserData());
     promise.then(() => {
-        dispatch(initializedSuccess())
-    })
-}
-
+        dispatch(initializedSuccess());
+    });
+};
 
 export default appReducer;
-

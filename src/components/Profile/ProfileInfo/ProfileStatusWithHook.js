@@ -1,44 +1,52 @@
-import s from './ProfileInfo.module.css'
-import React, {useEffect, useState} from 'react'
+import s from "./ProfileInfo.module.css";
+import React, { useEffect, useState } from "react";
 
 const ProfileStatusWithHook = (props) => {
-    console.log(props)
-    const [editMode, setEditMode] = useState(false)
-    const [status, setStatus] = useState(props.status)
+    const [editMode, setEditMode] = useState(false);
+
+    const [status, setStatus] = useState(props.status);
 
     const activateEditMode = () => {
-        setEditMode(true)
-    }
+        setEditMode(true);
+    };
 
     useEffect(() => {
-        setStatus(props.status)
-    }, [props.status])
+        setStatus(props.status);
+    }, [props.status]);
 
     const deactivateEditMode = () => {
-        setEditMode(false)
-        props.updateStatus(status)
-    }
+        setEditMode(false);
+        props.updateStatus(status);
+    };
 
     const onStatusChange = (e) => {
-        setStatus(e.currentTarget.value)
-    }
+        setStatus(e.currentTarget.value);
+    };
 
     return (
         <div className={s.status}>
             <p>Статус: </p>
-            {!editMode &&
+            {!editMode && (
                 <div className={s.statusInput}>
-                    {props.status !== null ?  <p onDoubleClick={activateEditMode}>{props.status}</p>: <p>Пустой статус</p> }
+                    {props.status !== null ? (
+                        <p onDoubleClick={activateEditMode}>{props.status}</p>
+                    ) : (
+                        <p>Пустой статус</p>
+                    )}
                 </div>
-            }
-            {editMode &&
+            )}
+            {editMode && (
                 <div className={s.statusSpan}>
-                    <input value={status} onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode}/>
+                    <input
+                        value={status}
+                        onChange={onStatusChange}
+                        autoFocus
+                        onBlur={deactivateEditMode}
+                    />
                 </div>
-            }
+            )}
         </div>
-    )
+    );
+};
 
-}
-
-export default ProfileStatusWithHook
+export default ProfileStatusWithHook;

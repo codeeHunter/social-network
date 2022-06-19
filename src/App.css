@@ -1,20 +1,23 @@
 .app-wrapper {
-    background-color: #141414;
     height: 100vh;
+
+    background-color: #141414;
 }
 
 .mainContent {
-    padding-top: 20px;
-    background: #141414;
-    width: 60%;
-    margin: 0 auto;
     display: grid;
     grid-template-areas: "n c";
     grid-template-columns: 2fr 10fr;
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 20px;
+
+    background: #141414;
 }
 
 .header {
     width: 100%;
+
     background-color: #222222;
 }
 
@@ -29,13 +32,18 @@
 
 .app-wrapper-content {
     padding-top: 10px;
+
     border: 1px solid #343639;
     border-radius: 4px;
     background-color: #141414;
 }
 
-h1, a, span, h2, p {
-    color: #E1E3E6;
+h1,
+a,
+span,
+h2,
+p {
+    color: #e1e3e6;
 }
 
 input {
@@ -43,13 +51,15 @@ input {
 }
 
 .textArea {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    color: #e1e3e6;
+
     border: 2px #333333 solid;
     border-radius: 4px;
     background: #222222;
-    margin-bottom: 10px;
     resize: none;
-    padding-bottom: 10px;
-    color: #e1e3e6;
 }
 
 .textArea:focus {
@@ -57,11 +67,13 @@ input {
 }
 
 .btn {
-    background: #656565;
-    border-radius: 5px;
     padding: 5px 10px;
-    color: #E1E3E6;
-    border: 0px;
+
+    color: #e1e3e6;
+
+    border: 0;
+    border-radius: 5px;
+    background: #656565;
 }
 
 .btn:hover {
