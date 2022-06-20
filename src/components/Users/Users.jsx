@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Style from "./users.module.css";
 import users from "./../../assets/users.jpg";
 import { NavLink } from "react-router-dom";
+import Paginator from "../Paginator/Paginator";
 
 const Users = (props) => {
-    const pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-    const pages = [];
-
-    for (let i = 1; i < pagesCount; i++) {
-        if (pages.length < 10) {
-            pages.push(i);
-        }
-    }
-
     const usersCount = [];
 
     for (let i = 0; i < 3; i++) {
@@ -20,42 +12,11 @@ const Users = (props) => {
             usersCount[i] = props.users[i];
         }
     }
-
-    const portionCount = Math.ceil(pagesCount / props.pageSize);
-    const [portionNumber, setPortionNumber] = useState(1);
-    const leftPortion = (portionNumber - 1) * props.pageSize + 1;
-    const rightPortion = portionNumber * props.pageSize;
-    const nextPage = () => setPortionNumber(portionNumber + 1);
-
     return (
         <>
-            <div className={Style.number}>
-                {portionNumber > 1 && (
-                    <button onClick={() => setPortionNumber(portionNumber - 1)}>PREV</button>
-                )}
-
-                {pages
-                    .filter((p) => p >= leftPortion && p <= rightPortion)
-                    .map((p, index) => (
-                        <span
-                            onClick={() => {
-                                props.onPageChanged(p);
-                            }}
-                            className={props.currentPage !== p ? "" : Style.isActive}
-                            key={index}
-                        >
-                            {p}
-                        </span>
-                    ))}
-                {portionCount > portionNumber && (
-                    <button className={"btn"} onClick={() => setPortionNumber(portionNumber + 1)}>
-                        NEXT
-                    </button>
-                )}
-            </div>
             <div className={Style.users}>
                 {usersCount.map((u) => (
-                    <div key={u.id}>
+                    <div className={Style.blockUsers} key={u.id}>
                         <span>
                             <div className={""}>
                                 <NavLink
@@ -111,29 +72,12 @@ const Users = (props) => {
                 ))}
             </div>
             <div className={Style.number + " " + Style.numberFooter}>
-                {portionNumber > 1 && (
-                    <button className={"btn"} onClick={setPortionNumber(portionNumber - 1)}>
-                        PREV
-                    </button>
-                )}
-                {pages
-                    .filter((p) => leftPortion && p <= rightPortion)
-                    .map((p, index) => (
-                        <span
-                            onClick={() => {
-                                props.onPageChanged(p);
-                            }}
-                            className={props.currentPage !== p ? "" : Style.isActive}
-                            key={index}
-                        >
-                            {p}
-                        </span>
-                    ))}
-                {portionCount > portionNumber && (
-                    <button className={"btn"} onClick={() => setPortionNumber(portionNumber + 1)}>
-                        NEXT
-                    </button>
-                )}
+                <Paginator
+                    totalUsersCount={props.totalUsersCount}
+                    pageSize={props.pageSize}
+                    currentPage={props.currentPage}
+                    onPageChanged={props.onPageChanged}
+                />
             </div>
         </>
     );

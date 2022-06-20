@@ -4,20 +4,27 @@
 }
 
 .users {
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px #333333 solid;
     width: 37vw;
+
+    border: 1px #333333 solid;
     background: #222222;
+}
+
+.blockUsers{ 
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .userInfo {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 200px;
     padding-bottom: 40px;
 }
 
@@ -29,10 +36,13 @@
 
 .name {
     color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .status {
     display: flex;
+    justify-content: center;
 }
 
 .users img {
@@ -57,6 +67,10 @@
     margin-bottom: 10px;
     background: #222222;
     
+}
+
+.prevBtn {
+    margin-right: 5px;
 }
 
 .numberFooter {
