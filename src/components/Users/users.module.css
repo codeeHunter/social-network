@@ -1,16 +1,17 @@
-/* stylelint-disable order/properties-order */
-.active .isActive {
+
+.isActive {
     font-weight: bold;
 }
 
 .users {
+
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background: #222222;
+    align-items: center;
+    justify-content: center;
     border: 1px #333333 solid;
     width: 37vw;
+    background: #222222;
 }
 
 .userInfo {
@@ -29,7 +30,7 @@
 .name {
     color: white;
 }
-/* stylelint-disable-next-line rule-empty-line-before */
+
 .status {
     display: flex;
 }
@@ -37,6 +38,7 @@
 .users img {
     width: 150px;
     height: 150px;
+
     border-radius: 50%;
 }
 
@@ -46,14 +48,15 @@
 
 .number {
     display: flex;
+    align-content: center;
     align-items: center;
     justify-content: center;
-    align-content: center;
-    background: #222222;
     border: 1px #333333 solid;
     width: 37vw;
     height: 4vh;
     margin-bottom: 10px;
+    background: #222222;
+    
 }
 
 .numberFooter {

@@ -38,6 +38,7 @@ const ProfileStatusWithHook = (props) => {
             {editMode && (
                 <div className={s.statusSpan}>
                     <input
+                        className=""
                         value={status}
                         onChange={onStatusChange}
                         autoFocus

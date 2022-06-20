@@ -1,11 +1,10 @@
-import React from "react";
-import s from "./users.module.css";
+import React, { useState } from "react";
+import Style from "./users.module.css";
 import users from "./../../assets/users.jpg";
 import { NavLink } from "react-router-dom";
 
 const Users = (props) => {
     const pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-
     const pages = [];
 
     for (let i = 1; i < pagesCount; i++) {
@@ -22,22 +21,39 @@ const Users = (props) => {
         }
     }
 
+    const portionCount = Math.ceil(pagesCount / props.pageSize);
+    const [portionNumber, setPortionNumber] = useState(1);
+    const leftPortion = (portionNumber - 1) * props.pageSize + 1;
+    const rightPortion = portionNumber * props.pageSize;
+    const nextPage = () => setPortionNumber(portionNumber + 1);
+
     return (
         <>
-            <div className={s.number}>
-                {pages.map((p, index) => (
-                    <span
-                        onClick={() => {
-                            props.onPageChanged(p);
-                        }}
-                        className={[s.number, props.currentPage === p && s.active]}
-                        key={index}
-                    >
-                        {p}
-                    </span>
-                ))}
+            <div className={Style.number}>
+                {portionNumber > 1 && (
+                    <button onClick={() => setPortionNumber(portionNumber - 1)}>PREV</button>
+                )}
+
+                {pages
+                    .filter((p) => p >= leftPortion && p <= rightPortion)
+                    .map((p, index) => (
+                        <span
+                            onClick={() => {
+                                props.onPageChanged(p);
+                            }}
+                            className={props.currentPage !== p ? "" : Style.isActive}
+                            key={index}
+                        >
+                            {p}
+                        </span>
+                    ))}
+                {portionCount > portionNumber && (
+                    <button className={"btn"} onClick={() => setPortionNumber(portionNumber + 1)}>
+                        NEXT
+                    </button>
+                )}
             </div>
-            <div className={s.users}>
+            <div className={Style.users}>
                 {usersCount.map((u) => (
                     <div key={u.id}>
                         <span>
@@ -45,7 +61,7 @@ const Users = (props) => {
                                 <NavLink
                                     exact="true"
                                     to={"/profile/" + u.id}
-                                    className={s.usersName}
+                                    className={Style.usersName}
                                 >
                                     <img
                                         src={u.photos.small != null ? u.photos.small : users}
@@ -53,7 +69,7 @@ const Users = (props) => {
                                     />
                                 </NavLink>
                             </div>
-                            <div className={s.userBtn}>
+                            <div className={Style.userBtn}>
                                 {u.followed ? (
                                     <button
                                         className={"btn"}
@@ -81,12 +97,12 @@ const Users = (props) => {
                                 )}
                             </div>
                         </span>
-                        <div className={s.userInfo}>
+                        <div className={Style.userInfo}>
                             <div>
-                                <div className={s.name}>
+                                <div className={Style.name}>
                                     <span>{u.name}</span>
                                 </div>
-                                <div className={s.status}>
+                                <div className={Style.status}>
                                     <span>{u.status}</span>
                                 </div>
                             </div>
@@ -94,18 +110,30 @@ const Users = (props) => {
                     </div>
                 ))}
             </div>
-            <div className={s.number + " " + s.numberFooter}>
-                {pages.map((p, index) => (
-                    <span
-                        onClick={() => {
-                            props.onPageChanged(p);
-                        }}
-                        className={[s.number, props.currentPage === p && s.active]}
-                        key={index}
-                    >
-                        {p}
-                    </span>
-                ))}
+            <div className={Style.number + " " + Style.numberFooter}>
+                {portionNumber > 1 && (
+                    <button className={"btn"} onClick={setPortionNumber(portionNumber - 1)}>
+                        PREV
+                    </button>
+                )}
+                {pages
+                    .filter((p) => leftPortion && p <= rightPortion)
+                    .map((p, index) => (
+                        <span
+                            onClick={() => {
+                                props.onPageChanged(p);
+                            }}
+                            className={props.currentPage !== p ? "" : Style.isActive}
+                            key={index}
+                        >
+                            {p}
+                        </span>
+                    ))}
+                {portionCount > portionNumber && (
+                    <button className={"btn"} onClick={() => setPortionNumber(portionNumber + 1)}>
+                        NEXT
+                    </button>
+                )}
             </div>
         </>
     );

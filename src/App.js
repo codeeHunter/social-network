@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import UsersContainer from "./components/Users/UsersContainer";
@@ -35,6 +35,7 @@ class App extends React.Component {
                         </div>
                         <div className="mainBlock">
                             <Routes>
+                                <Route path="/" element={<Navigate replace to="profile" />} />
                                 <Route path="profile" element={<ProfileContainer />}>
                                     <Route path=":user_Id" element={<UsersContainer />} />
                                 </Route>

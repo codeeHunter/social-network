@@ -6,8 +6,8 @@ const GET_CAPTCHA_URL_SUCCESS = "GET_CAPTCHA_URL_SUCCESS";
 
 const initialState = {
     userId: null,
-    email: null,
     login: null,
+    email: null,
     isAuth: false,
     captchaUrl: null,
 };
@@ -25,9 +25,9 @@ const authReducer = (state = initialState, action) => {
     }
 };
 
-export const setUserData = (userId, email, login, isAuth) => ({
+export const setUserData = (userId, login, email, isAuth) => ({
     type: SET_USER_DATA,
-    payload: { userId, email, login, isAuth },
+    payload: { userId, login, email, isAuth },
 });
 
 export const getCaptchaUrlSuccess = (captchaUrl) => ({
